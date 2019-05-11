@@ -6,11 +6,11 @@ hbs=require('hbs')
 
 console.log(__dirname)
  
-var p=path.join(__dirname,'\public')
-var p1=path.join(__dirname,"\\template\\views")
+var p=path.join(__dirname,'/public')
+var p1=path.join(__dirname,"/template/views")
 
 
-var partialspath=path.join(__dirname,"\\template\\partials")
+var partialspath=path.join(__dirname,"/template/partials")
 
 hbs.registerPartials(partialspath)
 const app=exp()
@@ -94,7 +94,7 @@ app.get('*',(req,res)=>{
 })
 
 
-var port=process.env.PORT|3000
+var port=process.env.PORT||3000
 app.listen(port,()=>{
     console.log('Server Running')
 })
