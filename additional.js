@@ -26,7 +26,7 @@ const geocode =(location,callback)=>{
 const forecast=(latt,long,callback)=>{
 
     var url2='https://api.darksky.net/forecast/ce8010044f26274c5e43420b33266dfc/'+long+','+latt;
-    console.log("heloo");
+    
 
     req({url:url2,json:true},(err,req)=>{
       
@@ -42,9 +42,7 @@ const forecast=(latt,long,callback)=>{
 
     
         else{
-                callback({
-                    msg:'\nNew temperature is : '+temperature+' and New  chances of rain '
-                    +precipProbability+'%and '+ req.body.hourly.summary})
+                callback('\nNew temperature is : '+temperature+' and New  chances of rain '+precipProbability+'%')
         
         }
   

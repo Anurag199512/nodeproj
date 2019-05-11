@@ -31,7 +31,7 @@ app.get('',(req,res)=>{
 */
 
 app.get('',(req,res)=>{
-    res.render('index',{name:'Anurag',Company:'IBM in'})
+    res.render('index',{name:'AAnurag',Company:'IBM in'})
 })
 
 
@@ -70,7 +70,9 @@ app.get('/weather',(req,res)=>{
         
 
         addi.getreport(val.lattitude,val.longitude,(val1)=>{
-            res.send(val1)
+            console.log("heloo");
+            console.log(val1)
+            res.send({msg:val1})
         })
     })
  }      
@@ -92,7 +94,7 @@ app.get('*',(req,res)=>{
 })
 
 
-
-app.listen(3000,()=>{
+var port=process.env.PORT|3000
+app.listen(port,()=>{
     console.log('Server Running')
 })

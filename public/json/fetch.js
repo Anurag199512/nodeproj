@@ -19,11 +19,11 @@ item1.addEventListener('submit',(event)=>{
     event.preventDefault()
     place=document.getElementById('place').value
      
-    fetch('http://localhost:3000/weather?address='+place).then((resp)=>resp.json()).
+    fetch('/weather?address='+place).then((resp)=>resp.json()).
     then((data)=>{
+    final.innerHTML=data.msg;
     console.log(data)
-
-    final.innerHTML=data.msg 
+    
 })
 
      console.log('working fine')
